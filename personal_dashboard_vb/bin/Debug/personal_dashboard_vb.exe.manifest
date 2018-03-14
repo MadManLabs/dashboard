@@ -90,6 +90,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MySql.Data.dll" size="396800">
+      <assemblyIdentity name="MySql.Data" version="6.10.5.0" publicKeyToken="C5687FC88969C44D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>7GG9vjGoGk+pgbcrEbntq07RZOioUQQnvZfk1TLxw3A=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ozone.Markdown.dll" size="21504">
       <assemblyIdentity name="Ozone.Markdown" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -102,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="personal_dashboard_vb.exe" size="262616">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="personal_dashboard_vb.exe" size="284632">
       <assemblyIdentity name="personal_dashboard_vb" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fSWgCeytCc33JG0MLeUirOpLvn4PgkIXxvrUmuf53zg=</dsig:DigestValue>
+        <dsig:DigestValue>G0lFdGXNa9JJ6QSyWvh0lHNOlTKxytL74tQq4MjgkTk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

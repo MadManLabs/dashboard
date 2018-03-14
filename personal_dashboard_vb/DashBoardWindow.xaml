@@ -12,6 +12,7 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+    
         Title="DashBoardWindow" Height="720" Width="1200" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
@@ -40,7 +41,7 @@
                     </WrapPanel>
                 </materialDesign:Card>
                 <materialDesign:Card Grid.Row="1" Margin="5" Height="380">
-                    <Calendar  Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                   <Calendar  Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </materialDesign:Card>
             </Grid>
             <WrapPanel Margin="10" Grid.Column="1" >
@@ -72,7 +73,7 @@
 
 
                         <materialDesign:Card Margin="5" Grid.Column="0" Grid.Row="1" Width="400" Height="100">
-                            <Button Style="{DynamicResource MaterialDesignFlatButton}" Height="100">
+                            <Button Style="{DynamicResource MaterialDesignFlatButton}" Height="100" Click="Button_Click_2">
                                 <Viewbox Width="48" Height="48">
                                     <Canvas Width="24" Height="24">
                                         <Path Data="M21,8V7L18,9L15,7V8L18,10M22,3H2A2,2 0 0,0 0,5V19A2,2 0 0,0 2,21H22A2,2 0 0,0 24,19V5A2,2 0 0,0 22,3M8,6A3,3 0 0,1 11,9A3,3 0 0,1 8,12A3,3 0 0,1 5,9A3,3 0 0,1 8,6M14,18H2V17C2,15 6,13.9 8,13.9C10,13.9 14,15 14,17M22,12H14V6H22" Fill="Black" />
@@ -82,7 +83,7 @@
                         </materialDesign:Card>
 
                         <materialDesign:Card Margin="5" Grid.Column="1" Grid.Row="0" Width="400" Height="100">
-                            <Button Style="{DynamicResource MaterialDesignFlatButton}" Height="100">
+                            <Button Style="{DynamicResource MaterialDesignFlatButton}" Height="100" Click="Button_Click_1">
                                 <Viewbox Width="48" Height="48">
                                     <Canvas Width="24" Height="24">
                                         <Path Data="M21,18V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V6H12C10.89,6 10,6.9 10,8V16A2,2 0 0,0 12,18M12,16H22V8H12M16,13.5A1.5,1.5 0 0,1 14.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,12A1.5,1.5 0 0,1 16,13.5Z" Fill="Black" />

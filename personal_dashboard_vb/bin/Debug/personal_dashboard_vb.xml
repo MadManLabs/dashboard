@@ -54,6 +54,16 @@ personal_dashboard_vb
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:personal_dashboard_vb.AccountWindow">
+<summary>
+AccountWindow
+</summary>
+</member>
+<member name="M:personal_dashboard_vb.AccountWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:personal_dashboard_vb.Application">
 <summary>
 Application
@@ -67,6 +77,16 @@ InitializeComponent
 <member name="M:personal_dashboard_vb.Application.Main">
 <summary>
 Application Entry Point.
+</summary>
+</member>
+<member name="T:personal_dashboard_vb.ContactsWindow">
+<summary>
+ContactsWindow
+</summary>
+</member>
+<member name="M:personal_dashboard_vb.ContactsWindow.InitializeComponent">
+<summary>
+InitializeComponent
 </summary>
 </member>
 <member name="T:personal_dashboard_vb.DashBoardWindow">
