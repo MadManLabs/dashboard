@@ -138,6 +138,7 @@ Public Class LoginWindow
             Dim Record As AccountRecord
             While READER.Read
                 Record = New AccountRecord
+                Record.Id = READER.GetDecimal("id")
                 Record.Content = READER.GetString("content")
                 Record.Cost = READER.GetString("cost")
                 Record.DateCreated = READER.GetString("date")
@@ -181,6 +182,7 @@ Public Structure Contact
 End Structure
 
 Public Structure AccountRecord
+    Dim Id As Integer
     Dim Content As String
     Dim Cost As Double
     Dim DateCreated As String

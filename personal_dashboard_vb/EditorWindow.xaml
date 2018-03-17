@@ -19,17 +19,17 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="600"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <materialDesign:Card  Grid.Row="0" Height="50" Background="Indigo">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">My First Material Design App</TextBlock>
+            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"  >Markdown Editor</TextBlock>
         </materialDesign:Card>
-        <Grid  Grid.Row="1" Height="600">
+        <Grid  Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width='*' />
                 <ColumnDefinition Width='*'/>
             </Grid.ColumnDefinitions>
-            <TextBox MaxLines="9999" TextChanged="TextBox_TextChanged" FontSize="15" Name="InputTextBox" Grid.Column="0" Height="auto" Width="auto" AcceptsReturn="True" Background="AntiqueWhite" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+            <TextBox VerticalContentAlignment="Top" Grid.Column="0" Grid.Row="1" TextChanged="TextBox_TextChanged" FontSize="15" Name="InputTextBox"  AcceptsReturn="True" Background="AntiqueWhite" />
             <WebBrowser Name="TranslatedTextBox" Grid.Column="1" Height="auto"/>
         </Grid>
     </Grid>

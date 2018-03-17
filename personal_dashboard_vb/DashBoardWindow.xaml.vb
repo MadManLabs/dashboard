@@ -19,13 +19,17 @@
 
     Private Sub Button_Click_1(sender As Object, e As RoutedEventArgs)
         '打开钱包管理
-        Dim Windows As New AccountWindow
-        Windows.Show()
+        Dim NewWindow As New AccountWindow
+        NewWindow.UserData = UserData
+        NewWindow.AccountRecords = AccountRecords
+        NewWindow.Show()
     End Sub
 
     Private Sub Button_Click_2(sender As Object, e As RoutedEventArgs)
         '打开通讯录管理
-        Dim Windows As New ContactsWindow
-        Windows.Show()
+        Dim NewWindow As New ContactsWindow
+        NewWindow.UserData = UserData
+        NewWindow.Contacts = Contacts
+        NewWindow.Show()
     End Sub
 End Class
