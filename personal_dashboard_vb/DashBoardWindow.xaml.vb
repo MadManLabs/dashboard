@@ -12,8 +12,10 @@
     End Sub
 
     Private Sub Button_Click(sender As Object, e As RoutedEventArgs)
-        '打开编辑器
-        Dim DiaryWindow As Object = New EditorWindow
+        '打开日记面板
+        Dim DiaryWindow As New DiaryWindow
+        DiaryWindow.UserData = UserData
+        DiaryWindow.Diaries = Diaries
         DiaryWindow.show()
     End Sub
 
@@ -30,6 +32,13 @@
         Dim NewWindow As New ContactsWindow
         NewWindow.UserData = UserData
         NewWindow.Contacts = Contacts
+        NewWindow.Show()
+    End Sub
+
+    Private Sub Button_Click_3(sender As Object, e As RoutedEventArgs)
+        '修改个人信息
+        Dim NewWindow As New EditInfoWindow
+        NewWindow.Data = UserData
         NewWindow.Show()
     End Sub
 End Class

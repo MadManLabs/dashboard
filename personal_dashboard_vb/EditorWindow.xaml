@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:personal_dashboard_vb"
         mc:Ignorable="d"
-        Title="Markdown编辑器" Height="700" Width="1200"
+        Title="Markdown编辑器" Height="700" Width="1200" Loaded="Window_Loaded"
         
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -14,7 +14,8 @@
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}">
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        >
 
     <Grid>
         <Grid.RowDefinitions>
@@ -22,14 +23,22 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <materialDesign:Card  Grid.Row="0" Height="50" Background="Indigo">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"  >Markdown Editor</TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width='2*' />
+                    <ColumnDefinition Width='*'/>
+                    <ColumnDefinition Width='*'/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"  Name="TitleTextBlock">file title</TextBlock>
+                <Button HorizontalAlignment="Center" Grid.Column="2" Click="Button_Click">保存</Button>
+            </Grid>
         </materialDesign:Card>
         <Grid  Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width='*' />
                 <ColumnDefinition Width='*'/>
             </Grid.ColumnDefinitions>
-            <TextBox VerticalContentAlignment="Top" Grid.Column="0" Grid.Row="1" TextChanged="TextBox_TextChanged" FontSize="15" Name="InputTextBox"  AcceptsReturn="True" Background="AntiqueWhite" />
+            <TextBox VerticalContentAlignment="Top" MinHeight="1000" Grid.Column="0" Grid.Row="1" TextChanged="TextBox_TextChanged" FontSize="15" Name="InputTextBox"  AcceptsReturn="True" Background="AntiqueWhite" />
             <WebBrowser Name="TranslatedTextBox" Grid.Column="1" Height="auto"/>
         </Grid>
     </Grid>

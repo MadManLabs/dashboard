@@ -111,7 +111,7 @@
                                     <Label FontSize="20" materialDesign:ColorZoneAssist.Mode="PrimaryDark" Name="DetailedCostDateLabel"></Label>
                                 </StackPanel>
                                 <WrapPanel Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                                    <Button Foreground="Red" Margin="30" Style="{DynamicResource MaterialDesignToolForegroundButton}" Content="删除此条记录"/>
+                                    <Button Foreground="Red" Margin="30" Style="{DynamicResource MaterialDesignToolForegroundButton}" Content="删除此条记录" Click="Button_Click_1"/>
                                 </WrapPanel>
 
                             </Grid>

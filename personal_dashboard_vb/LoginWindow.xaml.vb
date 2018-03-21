@@ -21,8 +21,6 @@ Public Class LoginWindow
         )
         thread.Start()
 
-
-
     End Sub
 
     Private Function Prepare_For_Login()
@@ -113,6 +111,7 @@ Public Class LoginWindow
                 Diary.Content = READER.GetString("content")
                 Diary.Format = READER.GetString("format")
                 Diary.DateEdit = READER.GetString("date")
+                Diary.Id = READER.GetDecimal("id")
                 Diaries.Add(Diary)
             End While
             READER.Close()
@@ -169,6 +168,7 @@ Public Structure UserData
 End Structure
 
 Public Structure Diary
+    Dim Id As Integer
     Dim Title As String
     Dim Content As String
     Dim DateEdit As String

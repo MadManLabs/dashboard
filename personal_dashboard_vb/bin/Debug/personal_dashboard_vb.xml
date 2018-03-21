@@ -54,6 +54,26 @@ personal_dashboard_vb
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:personal_dashboard_vb.DiaryWindow">
+<summary>
+DiaryWindow
+</summary>
+</member>
+<member name="M:personal_dashboard_vb.DiaryWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:personal_dashboard_vb.EditInfoWindow">
+<summary>
+EditInfoWindow
+</summary>
+</member>
+<member name="M:personal_dashboard_vb.EditInfoWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:personal_dashboard_vb.AccountWindow">
 <summary>
 AccountWindow

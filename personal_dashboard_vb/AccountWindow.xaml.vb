@@ -93,28 +93,31 @@ Public Class AccountWindow
     End Function
 
     Private Sub ListView_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
-        Dim Cost As Double = 0
-        Dim Name As String = ""
-        Dim Count As Integer = 1
-        Dim DateCreated As String = RecordListBox.SelectedItem.Tag
-        Dim SelectedPanel As WrapPanel = RecordListBox.SelectedItem
-        Dim elementUI As UIElement
-        Dim collection As UIElementCollection = SelectedPanel.Children
-        For Each elementUI In collection
-            If elementUI.GetType.ToString.EndsWith("Label") Then
-                Dim Label1 As Label = elementUI
-                If Count = 1 Then
-                    Cost = Double.Parse(Label1.Content)
-                    Count = Count + 1
-                ElseIf Count = 2 Then
-                    Name = Label1.Content
-                    Set_Detail_Panel(Cost, DateCreated, Name)
-                    Return
+        Try
+            Dim Cost As Double = 0
+            Dim Name As String = ""
+            Dim Count As Integer = 1
+            Dim DateCreated As String = RecordListBox.SelectedItem.Tag
+            Dim SelectedPanel As WrapPanel = RecordListBox.SelectedItem
+            Dim elementUI As UIElement
+            Dim collection As UIElementCollection = SelectedPanel.Children
+            For Each elementUI In collection
+                If elementUI.GetType.ToString.EndsWith("Label") Then
+                    Dim Label1 As Label = elementUI
+                    If Count = 1 Then
+                        Cost = Double.Parse(Label1.Content)
+                        Count = Count + 1
+                    ElseIf Count = 2 Then
+                        Name = Label1.Content
+                        Set_Detail_Panel(Cost, DateCreated, Name)
+                        Return
+                    End If
+
                 End If
-
-            End If
-        Next
-
+            Next
+        Catch ex As Exception
+            'nothing
+        End Try
     End Sub
 
     Private Sub Set_Detail_Panel(ByVal Cost, ByVal DateCreated, ByVal Name)
@@ -148,7 +151,7 @@ Public Class AccountWindow
         Record.Cost = Cost
         Record.DateCreated = Time
         AccountRecords.Add(Record)
-
+        Refresh_Statistic_Panel()
         Dim thread As New Thread(
         Sub()
             Dim MysqlConn As MySqlConnection
@@ -197,16 +200,65 @@ Public Class AccountWindow
 
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        DateCurrentLabel.Content = Date.Today.ToString
-        Dim Record As AccountRecord
-        For Each Record In AccountRecords
-            If (Record.Cost >= 0) Then
-                Add_Plus_To_ListBox(Record.Cost, Record.Content, Record.DateCreated)
-            Else
-                Add_Minus_To_ListBox(Record.Cost, Record.Content, Record.DateCreated)
-            End If
-        Next
-        Refresh_Statistic_Panel()
+        Init()
     End Sub
 
+    Private Sub Init()
+        Me.Dispatcher.Invoke(Function()
+                                 RecordListBox.Items.Clear()
+                                 DateCurrentLabel.Content = Date.Today.ToString
+                                 Dim Record As AccountRecord
+                                 For Each Record In AccountRecords
+                                     If (Record.Cost >= 0) Then
+                                         Add_Plus_To_ListBox(Record.Cost, Record.Content, Record.DateCreated)
+                                     Else
+                                         Add_Minus_To_ListBox(Record.Cost, Record.Content, Record.DateCreated)
+                                     End If
+                                 Next
+                                 Refresh_Statistic_Panel()
+                                 Return 0
+                             End Function
+            )
+    End Sub
+
+
+    Private Sub Button_Click_1(sender As Object, e As RoutedEventArgs)
+        '删除一条记录
+        Dim Cost As Double = Double.Parse(DetailedCostLabel.Content)
+        Dim Time As String = DetailedCostDateLabel.Content
+        Dim Content As String = DetailedCostNameLabel.Content
+
+        Dim thread As New Thread(
+       Sub()
+           Dim MysqlConn As MySqlConnection
+           Dim COMMAND As MySqlCommand
+
+           MysqlConn = New MySqlConnection
+           MysqlConn.ConnectionString =
+          "server=localhost;uid=root;password=password;database=vbdashboard"
+           MysqlConn.Open()
+           Try
+               Dim Query As String = "delete from vbdashboard.account where content = '" + Content + "' and cost = " + Cost.ToString + " and date = '" + Time + "' and belong = " + UserData.Id.ToString
+               'MsgBox(Query)
+               COMMAND = New MySqlCommand(Query, MysqlConn)
+               COMMAND.ExecuteNonQuery()
+               MysqlConn.Close()
+           Catch ex As MySqlException
+               MessageBox.Show(ex.Message)
+           Finally
+               MysqlConn.Dispose()
+           End Try
+           Dim temp As AccountRecord
+           For Each temp In AccountRecords
+               If temp.Content = Content AndAlso temp.Cost = Cost AndAlso temp.DateCreated = Time Then
+                   AccountRecords.Remove(temp)
+                   Exit For
+               End If
+           Next
+           MessageBox.Show("删除成功")
+           Init()
+       End Sub
+      )
+        thread.Start()
+    End Sub
 End Class
