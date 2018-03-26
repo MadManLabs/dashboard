@@ -5,6 +5,7 @@ Imports MySql.Data.MySqlClient
 Class EditorWindow
 
     Public Diary As Diary
+    Public MotherWindow As DiaryWindow
     Dim headData As String = "<html>
 <head>
     <style>
@@ -143,15 +144,11 @@ body{font-size:16px;}
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        'Diary = New Diary
-        'Diary.Title = "Test"
-        'Diary.Content = "# Test Title"
-        'Diary.Id = 1
-        'Diary.DateEdit = "2017"
-        'Diary.Format = "md"
-        '先复个空字符串
         InputTextBox.Text = Diary.Content
         TitleTextBlock.Text = Diary.Title
+        If (Not Diary.Format.Equals("Markdown")) Then
+            TranslatedTextBox.Visibility = Visibility.Hidden
+        End If
     End Sub
 
     Private Sub Button_Click(sender As Object, e As RoutedEventArgs)
@@ -166,10 +163,11 @@ body{font-size:16px;}
         MysqlConn.Open()
         Try
             Dim Query As String = "update vbdashboard.diary set content = '" + Diary.Content + "' , date = '" + Date.Now.ToString + "' where id = " + Diary.Id.ToString
-            MsgBox(Query)
             COMMAND = New MySqlCommand(Query, MysqlConn)
             COMMAND.ExecuteNonQuery()
             MysqlConn.Close()
+            MotherWindow.Update_Diaries_Data()
+            MessageBox.Show("保存成功")
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
         Finally

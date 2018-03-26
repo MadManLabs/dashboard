@@ -4,11 +4,14 @@ Imports System.Threading
 Public Class DiaryWindow
     Public Diaries As ArrayList
     Public UserData As UserData
+    Private NewFormat As String
+
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         Dim diary As Diary
         For Each diary In Diaries
             Add_Diary_To_ListView(diary)
         Next
+        NewFormat = ""
     End Sub
 
     Private Sub Add_Diary_To_ListView(Diary As Diary)
@@ -54,7 +57,13 @@ Public Class DiaryWindow
 
     Private Sub Button_Click(sender As Object, e As RoutedEventArgs)
         '新建文档
-        Dim Formart As String = "md"
+        Dim Formart As String
+        If NewFormat.Equals("Markdown") Or NewFormat.Equals("CommonText") Then
+            Formart = NewFormat
+        Else
+            MessageBox.Show("请选择文章格式类型")
+            Return
+        End If
         Dim Title As String = NewDiaryTitleBox.Text
         If (Not Title.Equals("")) Then
             Dim Diary As New Diary
@@ -65,6 +74,7 @@ Public Class DiaryWindow
             Diary.Id = -1 '无意义
             Add_New_Diary_To_DB(Diary)
         Else
+            MessageBox.Show("请输入文章标题")
             Return
         End If
     End Sub
@@ -95,7 +105,7 @@ Public Class DiaryWindow
         MessageBox.Show("添加成功")
     End Sub
 
-    Private Sub Update_Diaries_Data()
+    Public Sub Update_Diaries_Data()
         Dim MysqlConn As MySqlConnection
         Dim COMMAND As MySqlCommand
         Dim READER As MySqlDataReader
@@ -163,8 +173,17 @@ Public Class DiaryWindow
             If diary.Id = Id Then
                 Dim Editor As New EditorWindow
                 Editor.Diary = diary
+                Editor.MotherWindow = Me
                 Editor.Show()
             End If
         Next
+    End Sub
+
+    Private Sub NewDiaryFormatRadio_Checked(sender As Object, e As RoutedEventArgs) Handles NewDiaryFormatRadio.Checked
+        NewFormat = NewDiaryFormatRadio.Content
+    End Sub
+
+    Private Sub NewDiaryFormatRadio1_Checked(sender As Object, e As RoutedEventArgs) Handles NewDiaryFormatRadio1.Checked
+        NewFormat = NewDiaryFormatRadio1.Content
     End Sub
 End Class
