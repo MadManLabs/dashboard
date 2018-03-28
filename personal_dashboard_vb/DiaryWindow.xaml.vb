@@ -34,7 +34,7 @@ Public Class DiaryWindow
                     TimeLabel.Content = diary.DateEdit
                     SelectedDetailDock.Tag = diary.Id
 
-                    If (diary.Format = "md") Then
+                    If (diary.Format = "Markdown") Then
                         Dim htmlData = Ozone.Markdown.Parser.ParseMarkdown(diary.Content)
                         PreView_content(htmlData)
                     Else
@@ -68,7 +68,11 @@ Public Class DiaryWindow
         If (Not Title.Equals("")) Then
             Dim Diary As New Diary
             Diary.Title = Title
-            Diary.Content = "# 空白文本  " & "\n" & " - " & DateAndTime.DateString & " " & DateAndTime.TimeString
+            If (Formart.Equals("Markdown")) Then
+                Diary.Content = "# " & Title & "  " & "\n" & " - 创建时间：" & DateAndTime.DateString & " " & DateAndTime.TimeString
+            Else
+                Diary.Content = Title & "  " & "\n" & " - 创建时间：" & DateAndTime.DateString & " " & DateAndTime.TimeString
+            End If
             Diary.Format = Formart
             Diary.DateEdit = DateAndTime.DateString & " " & DateAndTime.TimeString
             Diary.Id = -1 '无意义

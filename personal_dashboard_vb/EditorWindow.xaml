@@ -35,11 +35,14 @@
         </materialDesign:Card>
         <Grid  Grid.Row="1">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width='40' />
                 <ColumnDefinition Width='*' />
                 <ColumnDefinition Width='*'/>
             </Grid.ColumnDefinitions>
-            <TextBox VerticalContentAlignment="Top" MinHeight="1000" Grid.Column="0" Grid.Row="1" TextChanged="TextBox_TextChanged" FontSize="15" Name="InputTextBox"  AcceptsReturn="True" Background="AntiqueWhite" />
-            <WebBrowser Name="TranslatedTextBox" Grid.Column="1" Height="auto"/>
+            <ListBox Name="lineNumbers" Background="Black"  Width="40">
+            </ListBox>
+            <TextBox VerticalContentAlignment="Top" MinHeight="1000" Grid.Column="1" Grid.Row="1" TextChanged="TextBox_TextChanged" FontSize="16.2" Name="InputTextBox"  AcceptsReturn="True" Background="DarkSlateGray" Foreground="LightCyan"/>
+            <WebBrowser Name="TranslatedTextBox" Grid.Column="2" Height="auto"/>
         </Grid>
     </Grid>
 </Window>

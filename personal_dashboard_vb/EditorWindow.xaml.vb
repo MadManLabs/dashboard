@@ -123,6 +123,7 @@ body{font-size:16px;}
 
     Private Sub TextBox_TextChanged(sender As Object, e As TextChangedEventArgs)
         Dim markdown As String = InputTextBox.Text
+        ReLoad_Lines()
         Dim thread As New Thread(
                                  Sub()
                                      Refresh(markdown)
@@ -149,6 +150,24 @@ body{font-size:16px;}
         If (Not Diary.Format.Equals("Markdown")) Then
             TranslatedTextBox.Visibility = Visibility.Hidden
         End If
+        ReLoad_Lines()
+
+    End Sub
+
+    Private Sub ReLoad_Lines()
+        lineNumbers.Items.Clear()
+        Dim lines As Integer = InputTextBox.LineCount + 1
+        For i As Integer = 1 To lines
+            '<ListBoxItem HorizontalAlignment = "Center" Foreground="White" FontSize="15" Padding="1">1</ListBoxItem>
+            Dim item As New ListBoxItem
+            item.HorizontalContentAlignment = HorizontalAlignment.Center
+            item.Foreground = New BrushConverter().ConvertFromString("White")
+            item.FontSize = 15
+            item.Padding = New ThicknessConverter().ConvertFromString("0.85")
+            item.Content = i
+            lineNumbers.Items.Add(item)
+        Next
+
     End Sub
 
     Private Sub Button_Click(sender As Object, e As RoutedEventArgs)

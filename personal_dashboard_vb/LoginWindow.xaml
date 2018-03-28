@@ -42,7 +42,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBox Margin="3" Grid.Column="0" Name="LoginUserNameTextBox"  Tag=" 用户名/邮箱" Text="2257238649@qq.com"></TextBox>
                         <TextBlock  Grid.Column="1" Margin="3" VerticalAlignment="Bottom">           
-                            <Hyperlink NavigateUri="http://www.google.com">注册新用户</Hyperlink>
+                            <Hyperlink NavigateUri="http://sites.xuranus.com/vbdashboard">注册新用户</Hyperlink>
                         </TextBlock>
                     </Grid>
                     <Grid Grid.Row="1">
@@ -52,7 +52,7 @@
                         </Grid.ColumnDefinitions>
                         <PasswordBox Margin="3"   Grid.Column="0" Name="LoginPasswordBox" Tag=" 密码" Password="12345"></PasswordBox>
                         <TextBlock  Grid.Column="1" Margin="3" VerticalAlignment="Bottom">  
-                            <Hyperlink NavigateUri="http://www.google.com">找回密码</Hyperlink>
+                            <Hyperlink NavigateUri="http://sites.xuranus.com/vbdashboard">找回密码</Hyperlink>
                         </TextBlock>
 
                     </Grid>

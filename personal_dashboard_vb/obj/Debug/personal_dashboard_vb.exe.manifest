@@ -114,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="personal_dashboard_vb.exe" size="321496">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="personal_dashboard_vb.exe" size="322520">
       <assemblyIdentity name="personal_dashboard_vb" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DHHnRWxRfBpwW5hermzvPBgBWfHrTpM7cBaFq4Ru7y0=</dsig:DigestValue>
+        <dsig:DigestValue>LnA1VPN7Z8rRwvV5u9yazSmy+XEYlNVytTBfBOVtEYI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
