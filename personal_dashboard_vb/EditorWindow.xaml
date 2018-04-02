@@ -39,9 +39,9 @@
                 <ColumnDefinition Width='*' />
                 <ColumnDefinition Width='*'/>
             </Grid.ColumnDefinitions>
-            <ListBox Name="lineNumbers" Background="Black"  Width="40">
+            <ListBox Name="lineNumbers" Background="#282C34"  Foreground="#444B5A" Width="40" Padding="4">
             </ListBox>
-            <TextBox VerticalContentAlignment="Top" MinHeight="1000" Grid.Column="1" Grid.Row="1" TextChanged="TextBox_TextChanged" FontSize="16.2" Name="InputTextBox"  AcceptsReturn="True" Background="DarkSlateGray" Foreground="LightCyan"/>
+            <TextBox  VerticalContentAlignment="Top" MinHeight="1000" Grid.Column="1" Grid.Row="1" TextChanged="TextBox_TextChanged" FontSize="16.4" Name="InputTextBox"  AcceptsReturn="True" Background="#282C34" Foreground="#F8F8F2" CaretBrush="#F8F8F2"/>
             <WebBrowser Name="TranslatedTextBox" Grid.Column="2" Height="auto"/>
         </Grid>
     </Grid>

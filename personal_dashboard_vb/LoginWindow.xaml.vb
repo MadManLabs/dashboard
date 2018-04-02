@@ -155,6 +155,10 @@ Public Class LoginWindow
         Return True
     End Function
 
+    Private Sub Hyperlink_Click(sender As Object, e As RoutedEventArgs)
+        '打开相应的网页
+        System.Diagnostics.Process.Start("http://sites.xuranus.com/vbdashboard")
+    End Sub
 End Class
 
 
