@@ -43,3 +43,4 @@ C:\Users\王星校\source\repos\personal_dashboard_vb\personal_dashboard_vb\obj\
 C:\Users\王星校\source\repos\personal_dashboard_vb\personal_dashboard_vb\obj\Debug\EditInfoWindow.baml
 C:\Users\王星校\source\repos\personal_dashboard_vb\personal_dashboard_vb\obj\Debug\DiaryWindow.g.vb
 C:\Users\王星校\source\repos\personal_dashboard_vb\personal_dashboard_vb\obj\Debug\DiaryWindow.baml
+C:\Users\王星校\source\repos\personal_dashboard_vb\personal_dashboard_vb\obj\Debug\personal_dashboard_vb_Content.g.vb

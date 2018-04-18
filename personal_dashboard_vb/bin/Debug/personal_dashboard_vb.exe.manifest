@@ -114,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="personal_dashboard_vb.exe" size="322520">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="personal_dashboard_vb.exe" size="316376">
       <assemblyIdentity name="personal_dashboard_vb" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OT/bQNWNvtiYpqk4YAzKng9wFAaJL5SvK38yQ2nWF0Q=</dsig:DigestValue>
+        <dsig:DigestValue>H7nMYwFt/UwuxX9sQkP1A476F4QOCU/7CR4wQXHstP8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -149,6 +149,15 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="My Project\md.css" size="3170">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>AcQdcR9nIND6lgi8fskITM8ddOOkl8LxwnnzpUPVjJA=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="personal_dashboard_vb.exe.config" size="189">
     <hash>
       <dsig:Transforms>

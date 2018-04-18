@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="personal_dashboard_vb.exe.manifest" size="8830">
+    <dependentAssembly dependencyType="install" codebase="personal_dashboard_vb.exe.manifest" size="9225">
       <assemblyIdentity name="personal_dashboard_vb.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uu2tfUeijlbaCwLKzah9S2mAc5N81XBwi1n6qs7JtYE=</dsig:DigestValue>
+        <dsig:DigestValue>blIFBaVb9j4rYUkuhBF+NWnIfTOdqLtGhVbhWcsQcCA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
